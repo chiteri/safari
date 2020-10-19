@@ -3,11 +3,10 @@
     background-color: #1F5768;
 }
 
-.View {
-
+input {
+    margin: 16px;
 }
 
-.Map {
-    width: 600px;
-    height: 450px;
+button {
+    margin: 16px;
 }
