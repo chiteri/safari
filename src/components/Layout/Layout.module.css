@@ -1,12 +1,37 @@
-.Container {
-    border: 2px solid black;
-    background-color: #1F5768;
-}
+header{
+    grid-area: header;
+    background-color: teal;
+  }
+  
+  nav{
+    grid-area: nav;
+    background-color: tomato;
+  }
+  
+  main{
+    grid-area: main;
+    background-color: lightblue;
+  }
+  
+  aside{
+    grid-area: aside;
+    background-color: orange;
+  }
+  
+  footer{
+    grid-area: footer;
+    background-color: lightgreen;
+  }
 
-input {
-    margin: 16px;
+.Map {
+    position: absolute;
+    width: 49.2%;
+    height: 69.2%;
 }
-
-button {
-    margin: 16px;
-}
+  /* .Map {
+    width: 60%;
+    height: 80%; 
+    margin: 0 auto;
+    border: 5px solid black;
+}; */
+  

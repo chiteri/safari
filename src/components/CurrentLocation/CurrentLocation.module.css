@@ -1,12 +1,9 @@
-.View {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    border: 2px solid blue;
+.Map {
+    position: absolute;
+    width: 49.2%;
+    height: 69.2%;
 }
 
-.Map {
-    width: 600px;
-    height: 450px;
-}
+/* .Map {
+    height: 100%;
+} */

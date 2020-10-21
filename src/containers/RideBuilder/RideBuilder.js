@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import Aux from '../../hoc/Auxilliary';
-import CurrentLocation from '../../components/CurrentLocation/CurrentLocation';
-import SideBar from '../../components/SideBar/SideBar';
+import MapContainer from '../MapContainer/MapContainer';
+// import SideBar from '../../components/Layout/SideBar/SideBar';
 
 class RideBuilder extends Component {
     render() {
         return (
             <Aux>
-                <SideBar />
-                <CurrentLocation />
+                <MapContainer />
             </Aux>
         );
     }

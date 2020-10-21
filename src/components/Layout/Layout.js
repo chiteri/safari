@@ -1,13 +1,16 @@
 import React from 'react';
+import './Layout.module.css';
 import Aux from '../../hoc/Auxilliary';
-import styles from './Layout.module.css';
 
 const layout = (props) => (
     <Aux>
-       <nav> <h1> Safari </h1></nav> 
-       <main className={styles.Container}>
+        <header><h1>Safari</h1></header>
+        <nav>NAV</nav>
+        <main>
             {props.children}
-       </main>
+        </main>
+        <aside>ASIDE</aside>
+        <footer>FOOTER</footer>
     </Aux>
 
 );
