@@ -10,7 +10,8 @@ const layout = (props) => (
             {props.children}
         </main>
         <aside>ASIDE</aside>
-        <footer>FOOTER</footer>
+        <footer> 
+            <hr /> All rights reserved, MMXX&copy; </footer>
     </Aux>
 
 );
