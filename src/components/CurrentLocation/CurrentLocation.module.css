@@ -1,7 +1,7 @@
 .Map {
-    position: absolute;
-    width: 49.2%;
-    height: 69.2%;
+    position: relative;
+    overflow: hidden;
+    height:100%;
 }
 
 /* .Map {

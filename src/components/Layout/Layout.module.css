@@ -8,14 +8,19 @@ header{
     grid-area: nav;
     border: 2px solid #e1dfdb;
     border-radius: 25px;
-    padding: 25px;
+    padding: 5px;
     margin-left: 10px;
     /* background-color: #e1dfdb; */
   }
   
   main{
     grid-area: main;
-    /* background-color: lightblue; */
+    background-color: lightblue;
+    height: 100%;
+    border: 2px solid #e1dfdb;
+    border-radius: 25px;
+    padding: 5px;
+    margin: 5px;
   }
   
   aside{
@@ -23,7 +28,8 @@ header{
     border: 2px solid #e1dfdb;
     border-radius: 25px;
     padding: 25px;
-    margin-right: 10px;
+    margin: 5px;
+    color: #99a1b3;
     /* background-color: orange; */
   }
   
@@ -42,14 +48,47 @@ header{
 }
 
 .Map {
-    position: absolute;
-    width: 50%;
-    height: 71%;
+    position: relative;
+    overflow: hidden;
+    height:100%;
 }
-/* .Map {
-    width: 60%;
-    height: 80%; 
-    margin: 0 auto;
-    border: 5px solid black;
-}; */
+
+main div {
+  height: 100%;
+  width: 100%; 
+}
+
+li {
+    list-style: none;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0 10px;
+    margin: 0;
+    border: 5px solid #ffffff;
+    color: #99a1b3;
+}
+
+li:hover {
+    color: #031b4e;
+    opacity: .7;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: #f4f2d4;
+}
+
+input {
+    margin: 5px;
+}
+
+button {
+    margin: 2px 5px; 
+    /* background-color: #0069ff;
+    color: #ffffff; */
+}
   

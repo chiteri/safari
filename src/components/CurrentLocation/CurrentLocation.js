@@ -111,8 +111,8 @@ class CurrentLocation extends Component {
       const style = Object.assign({}, styles.Map);
     
         return (
-            <div className={styles.Map} style={styles} ref="map">
-              <p> Loading map ... </p>
+            <div style={styles} ref="map">
+              
               {this.renderChildren()}
             </div>
         );
