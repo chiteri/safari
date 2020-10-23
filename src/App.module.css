@@ -4,7 +4,7 @@
     grid-template-columns: 2fr 5fr 3fr;
     grid-template-areas: 
       "header header header"
-      "nav main aside"
+      "sidebar main aside"
       "footer footer footer";
     height: 100vh;
     grid-gap: .75em;
@@ -16,6 +16,11 @@
     .Container {
         display: block;
     }
+
+    header h1, nav ul li {
+      display: block;
+      width: 100%;
+    }
   }
 
 /* Larger devices like tablets or mobiles in potrait mode */
@@ -25,7 +30,7 @@
     grid-template-columns: 2fr 5fr 3fr;
     grid-template-areas: 
     "header header header"
-    "nav nav nav"
+    "sidebar sidebar sidebar"
     "main main aside"    
     "footer footer footer";
     }
