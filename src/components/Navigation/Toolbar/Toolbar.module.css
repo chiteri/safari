@@ -1,68 +1,19 @@
 header{
-    grid-area: header;
-    text-align: left;
-    background-color: #1b1b1b;
-    width: 100%;
-  }
-  
-  nav{
-    /*grid-area: nav;
-     border: 2px solid #e1dfdb;
-    border-radius: 25px; */
-    padding: 5px;
-    margin-left: 10px;
-    /* background-color: #e1dfdb; */
-  }
+  grid-area: header;
+  text-align: left;
+  background-color: #1b1b1b;
+  width: 100%;
+}
 
-  header h1 {
-    float: left;
-  }
+nav{
+  /*grid-area: nav;
+    border: 2px solid #e1dfdb;
+  border-radius: 25px; */
+  padding: 5px;
+  margin-left: 10px;
+  /* background-color: #e1dfdb; */
+}
 
-
-
-nav ul {
-    /* position: relative; 
-    overflow: hidden; */
-    list-style-type: none;  
-    margin: 0;  
-    padding: 0;
-    float: right;
-    /* background-color: #600; 
-    position: relative; */
-  }
-  
-  li {
-      list-style: none;
-      line-height: 1.6;
-      font-size: 0.9rem;
-      font-weight: bold;
-      /* padding: 0 10px;
-      margin: 0; 
-      border: 5px solid #ffffff; */ 
-      color: #99a1b3;
-  }
-  
-  nav ul li {
-    padding: 15px 3px 0;
-    float: left;
-  } 
-  
-  a {
-    text-decoration: none;
-  }
-  
-  nav li a {  
-    display:block;  
-    padding:0 20px; 
-    text-decoration:none;  
-    color: #99a1b3;
-  }  
-  
-  nav li a:hover {  
-    background-color:#e1dfdb; 
-    text-decoration:none;  
-  }
-
-  a:active {
-    color: #f4f2d4;
+header h1 {
+  float: left;
 }
