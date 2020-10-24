@@ -1,23 +1,23 @@
 import React, {Component} from 'react';
-import styles from './SideBar.module.css';
+import './SideBar.module.css';
 
-class SideBar extends Component {
-    render() {
-        return (
-            <section className={styles.SideBar}>                    
-                <div><input type="text" id="from" placeholder="From" /> </div>
-                <div><input type="text" id="to" placeholder="Destination" /> </div>
-                <button id="request">Request</button>
-                <button id="cancel">Cancel Ride</button>
-                <h3> Ride Hailing</h3>
-                <ul> 
-                    <li>Dash</li>
-                    <li>Trips</li>
-                    <li>Profile</li>
-                </ul>
-            </section>
-        );
-    }
-}
+const sidebar = (props) => (
+    <section>
+        <div>
+            <label for="from"></label>
+            <input type="text" id="from" placeholder="From"></input>
+        </div>
 
-export default SideBar;
+        <div>
+            <label for="to"></label>
+            <input type="text" id="to" placeholder="Destination"></input>
+        </div>
+
+        <div>
+            <button id="request">Request</button>
+            <button id="cancel">Cancel</button>
+        </div>
+    </section>
+);
+
+export default sidebar;

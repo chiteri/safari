@@ -2,26 +2,12 @@ import React from 'react';
 import './Layout.module.css';
 import Aux from '../../hoc/Auxilliary';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
+import SideBar from '../SideBar/SideBar';
 
 const layout = (props) => (
     <Aux>
         <Toolbar />            
-        <section>
-            <div>
-                <label for="from"></label>
-                <input type="text" id="from" placeholder="From"></input>
-            </div>
-
-            <div>
-                <label for="to"></label>
-                <input type="text" id="to" placeholder="Destination"></input>
-            </div>
-
-            <div>
-                <button id="request">Request</button>
-                <button id="cancel">Cancel</button>
-            </div>
-        </section>
+        <SideBar />
         <main>
             {props.children}
         </main>
@@ -29,7 +15,9 @@ const layout = (props) => (
             <p>ASIDE</p>
         </aside>
         <footer> 
-            <hr /> All rights reserved, MMXX&copy; </footer>
+            <hr /> 
+            <p> All rights reserved, MMXX&copy; </p>
+        </footer>
     </Aux>
 
 );

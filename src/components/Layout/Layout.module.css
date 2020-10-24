@@ -1,11 +1,3 @@
-section {
-  grid-area: sidebar;
-  border: 2px solid #e1dfdb;
-  border-radius: 25px;
-  padding: 5px;
-  margin: 5px;
-}
-
 main{
   grid-area: main;
   background-color: lightblue;
@@ -49,15 +41,5 @@ hr {
 main div {
   height: 100%;
   width: 100%; 
-}
-
-input {
-    margin: 5px;
-}
-
-button {
-    margin: 2px 5px; 
-    /* background-color: #0069ff;
-    color: #ffffff; */
 }
   

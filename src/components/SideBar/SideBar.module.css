@@ -1,8 +1,17 @@
-.SideBar {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 35%;
-    border: 2px solid green;
+section {
+    grid-area: sidebar;
+    border: 2px solid #e1dfdb;
+    border-radius: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+
+input {
+    margin: 5px;
+}
+
+button {
+    margin: 2px 5px; 
+    /* background-color: #0069ff;
+    color: #ffffff; */
 }
