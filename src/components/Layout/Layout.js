@@ -3,10 +3,12 @@ import './Layout.module.css';
 import Aux from '../../hoc/Auxilliary';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import SideBar from '../SideBar/SideBar';
+import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 
 const layout = (props) => (
     <Aux>
-        <Toolbar />            
+        <Toolbar />  
+        <SideDrawer />       
         <SideBar />
         <main>
             {props.children}
