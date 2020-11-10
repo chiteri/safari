@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Map, GoogleApiWrapper, InfoWindow, Marker} from 'google-maps-react';
-import CurrentLocation from '../../components/CurrentLocation/CurrentLocation';
+import RideMap from '../RideMap/RideMap';
 
 class MapContainer extends Component {
     state = {
@@ -28,7 +28,7 @@ class MapContainer extends Component {
 
     render() {
         return (
-          <CurrentLocation
+          <RideMap
             centerAroundCurrentLocation
             google={this.props.google}
           >
@@ -42,12 +42,12 @@ class MapContainer extends Component {
                 <h4>{this.state.selectedPlace.name}</h4>
               </div>
             </InfoWindow>
-          </CurrentLocation>
+          </RideMap>
         );
     }
 
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'YOUR_KEY_HERE'
+    apiKey: 'GOOGLE_MAPS_API_KEY_HERE'
   })(MapContainer);

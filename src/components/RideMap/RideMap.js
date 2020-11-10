@@ -1,16 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import styles from './CurrentLocation.module.css';
+import styles from './RideMap.module.css';
 
-/* const mapStyles = {
-  map: {  
-    position: 'absolute',
-    width: '49.2%',
-    height: '69.2%'
-  }
-}; */
-
-class CurrentLocation extends Component {
+class RideMap extends Component {
     constructor(props) {
         super(props);
         const {lat, lng} = this.props.initialCenter;
@@ -120,7 +112,7 @@ class CurrentLocation extends Component {
 
 }
 
-CurrentLocation.defaultProps = {
+RideMap.defaultProps = {
     zoom: 14,
     initialCenter: {
       lat: 53.5461,
@@ -130,4 +122,4 @@ CurrentLocation.defaultProps = {
     visible: true
 }; 
 
-export default CurrentLocation;
+export default RideMap;
