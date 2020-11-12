@@ -1,6 +1,6 @@
 main{
   grid-area: main;
-  background-color: lightblue;
+  /* background-color: lightblue; */
   height: 100%;
   border: 2px solid #e1dfdb;
   border-radius: 25px;

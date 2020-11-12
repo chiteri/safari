@@ -1,7 +1,13 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import Aux from '../../hoc/Auxilliary';
+import Geocode from 'react-geocode';
+import PlacesAutocomplete from 'react-google-autocomplete';
 import styles from './RideMap.module.css';
+
+Geocode.setApiKey('GOOGLE_MAPS_API_KEY_HERE');
+Geocode.enableDebug();
 
 class RideMap extends Component {
     constructor(props) {
@@ -13,7 +19,9 @@ class RideMap extends Component {
             currentLocation: {
                 lat: lat,
                 lng: lng
-            }
+            }, 
+            pickup: null, 
+            destination: null
         };
     }
 
@@ -56,7 +64,7 @@ class RideMap extends Component {
               currentLocation: {
                 lat: coords.latitude,
                 lng: coords.longitude
-              }
+              },
             });
           });
         }
@@ -119,12 +127,109 @@ class RideMap extends Component {
       const style = Object.assign({}, styles.Map);
     
         return (
+          <Aux>
             <div style={styles} ref="map">
               
               {this.renderChildren()}
             </div>
+            <div>
+              {/* For Auto complete Search Box, "From" */}
+              <PlacesAutocomplete
+                style={{width: '35%', marginTop: '15px'}}
+                placeholder='Pickup location'
+                onPlaceSelected={(place) => {
+                  this.setState({pickup: 
+                    {address: place.formatted_address, 
+                      lat: place.geometry.location.lat(), 
+                      lng: place.geometry.location.lng()}});
+                  console.log('[Pickup] '+this.state.pickup.address);
+                }}
+                location={[this.state.currentLocation.lat, this.state.currentLocation.lng ]}
+                radius={10000}
+                types={['(regions)']}
+                componentRestrictions={{country: "ca"}}
+              />
+
+            {/* For Auto complete Search Box, "To" */}
+            <PlacesAutocomplete
+                style={{width: '35%', marginTop: '15px'}}
+                placeholder='Destination'
+                onPlaceSelected={(place) => {
+                  this.setState({destination: 
+                    {address: place.formatted_address, 
+                      lat: place.geometry.location.lat(), 
+                      lng: place.geometry.location.lng()}});
+                  console.log('[Destination] '+this.state.destination.address);
+                }}
+                types={['(regions)']}
+                componentRestrictions={{country: "ca"}}
+            />
+            <button id="request">Request</button>
+              
+            </div>
+          </Aux>
         );
+    }
+
+    /**
+    * Component should only update ( meaning re-render ), when the user selects the address, or drags the pin
+    *
+    * @param nextProps
+    * @param nextState
+    * @return {boolean}
+    */
+    shouldComponentUpdate( nextProps, nextState ){
+      if (this.state.currentLocation !== nextState.currentLocation ||
+          this.state.address !== nextState.address) {
+        return true;
+      } else if (this.state.currentLocation === nextProps.currentLocation) {
+        return false;
       }
+    } 
+
+    /**
+      * And function for city,state and address input
+      * @param event
+      */
+    onChange = ( event ) => {
+      this.setState({ [event.target.name]: event.target.value });
+    };
+
+    /**
+    * When the user types an address in the search box
+    * @param place
+    */
+    onPlaceSelected = ( place ) => {
+      const address = place.formatted_address,
+      addressArray =  place.address_components,
+      latValue = place.geometry.location.lat(),
+      lngValue = place.geometry.location.lng(); // Set these values in the state 
+
+      this.setState({
+        destination: ( addressArray ) ? addressArray : ''
+      });
+    }
+
+    getAddress (selectedLocation) {
+      let address = '';
+      // Get the current address from the default map position and update state
+      Geocode.fromLatLng( selectedLocation.lat , selectedLocation.lng ).then(
+        response => {
+         address = response.results[0].formatted_address;
+       
+         console.log( '[getAddress] Address is: ', address );
+       
+         /* this.setState( {
+          address: ( address ) ? address : ''
+         } ) */
+        },
+        error => {
+         console.error(error);
+        }
+       );
+
+       return address;
+    }
 
 }
 

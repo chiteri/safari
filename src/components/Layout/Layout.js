@@ -14,12 +14,10 @@ const layout = (props) => (
             {props.children}
         </main>
         <aside>
-            <p>ASIDE</p>
+            <p>MESSAGES</p>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum lacinia dolor non auctor. </p>
+            <p> Proin tempor pharetra sollicitudin. Etiam mattis eros quis turpis convallis, eget maximus neque elementum. </p>
         </aside>
-        <footer> 
-            <hr /> 
-            <p> All rights reserved, MMXX&copy; </p>
-        </footer>
     </Aux>
 
 );
